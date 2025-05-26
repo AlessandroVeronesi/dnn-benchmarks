@@ -5,16 +5,16 @@
 # ------------------
 
 models=(\
-    # "lenet"\
-    "alexnet"\
-    "vgg11"\
+    "lenet"\
+    # "alexnet"\
+    # "vgg11"\
     # "vgg19"\
-    "res18"\
-    "res34"\
-    # "res50"\
+    # "res18"\
+    # "res34"\
+    "res50"\
     # "res101"\
-    # "convmixer"\
-    # "mlpmixer"\
+    "convmixer"\
+    "mlpmixer"\
     # "vit_small"\
     # "vit_tiny"\
     # "simplevit"\

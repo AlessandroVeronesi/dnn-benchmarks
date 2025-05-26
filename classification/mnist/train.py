@@ -8,6 +8,7 @@ import torch.nn as nn
 
 from dataset import getMNIST
 import models
+import models.lenet
 import utils
 
 ###################################################
@@ -66,7 +67,7 @@ if __name__ == '__main__':
     print(f'-I({__file__}): Loading model...')
 
     if args.model=='lenet':
-        model=models.LeNet()
+        model=models.lenet.LeNet()
     else:
         raise ValueError('unsupported model')
 
