@@ -62,7 +62,7 @@ class ImageNetValDataset(Dataset):
         return image, label
 
 
-def imageNET(datasetdir, size=256, batchsize=64):
+def getImageNET(datasetdir, size=256, batchsize=64):
 
     val_img_dir = os.path.join(datasetdir, 'ImageNet', 'data', 'val')
     label_file = os.path.join(datasetdir, 'ImageNet', 'data', 'LOC_val_solution.csv')
