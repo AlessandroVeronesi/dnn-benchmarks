@@ -24,8 +24,8 @@ from dataset import getCIFAR10
 ## System
 
 datasetdir = os.getenv('TORCH_DATASETPATH', os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
-# savedir    = os.getenv('TORCH_TRAINPATH', os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
-savedir    = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
+savedir    = os.getenv('TORCH_TRAINPATH', os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
+#savedir    = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
 
 #####################################################################################################################
 ## Train Routine

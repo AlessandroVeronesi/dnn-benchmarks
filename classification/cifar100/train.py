@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
 '''
 
 Train CIFAR100 with PyTorch and Vision Transformers!
@@ -24,8 +24,8 @@ from dataset import getCIFAR100
 ## System
 
 datasetdir = os.getenv('TORCH_DATASETPATH', os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
-# savedir    = os.getenv('TORCH_TRAINPATH', os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
-savedir    = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
+savedir    = os.getenv('TORCH_TRAINPATH', os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
+# savedir    = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
 
 #####################################################################################################################
 ## Train Routine
@@ -108,7 +108,7 @@ def train(net, epoch, workdir, netname, patch, best_acc):
         with open(os.path.join(logdir, f'log_{args.net}_patch{args.patch}.txt'), 'w') as f:
             pass
 
-    content = time.ctime() + f', Epoch: {epoch}, lr: {optimizer.param_groups[0]['lr']:.7f}, val loss: {val_loss:.5f}, acc: {(acc):.5f}'
+    content = f'{time.ctime()} , Epoch: {epoch}, lr: {optimizer.param_groups[0]['lr']:.7f}, val loss: {val_loss:.5f}, acc: {(acc):.5f}'
     print(content)
 
     with open(os.path.join(logdir, 'log_' + args.net + '_patch' + str(patch) + '.txt'), 'a') as appender:

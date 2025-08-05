@@ -7,24 +7,24 @@
 models=(\
     # "lenet"\
     # "alexnet"\
-    "vgg11"\
-    "vgg19"\
+    # "vgg11"\
+    # "vgg19"\
     # "res18"\
     # "res34"\
     "res50"\
-    "res101"\
+    # "res101"\
     # "convmixer"\
     # "mlpmixer"\
-    "vit_small"\
-    "vit_tiny"\
-    "simplevit"\
-    "vit"\
+    #"vit_small"\
+    #"vit_tiny"\
+    #"simplevit"\
+    #"vit"\
     # "cait"\
     # "cait_small"\
-    "swin"\
+    #"swin"\
     )
 
 for model in "${models[@]}";
 do
-    python train.py --net $model --resume
+    python train.py --net $model --resume --n_epochs 350
 done
