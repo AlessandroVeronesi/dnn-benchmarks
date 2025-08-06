@@ -5,23 +5,10 @@
 # ------------------
 
 models=(\
-    # "lenet"\
-    # "alexnet"\
+    "lenet"\
+    "alexnet"\
     "vgg11"\
-    # "vgg19"\
-    # "res18"\
-    # "res34"\
-    # "res50"\
-    # "res101"\
-    # "convmixer"\
-    # "mlpmixer"\
-    # "vit_small"\
-    # "vit_tiny"\
-    # "simplevit"\
-    # "vit"\
-    # "cait"\
-    # "cait_small"\
-    # "swin"\
+    "vgg19"\
     )
 
 for model in "${models[@]}";

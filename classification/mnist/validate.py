@@ -11,15 +11,16 @@ from utils import test
 ###################################################
 
 datasetdir = os.getenv('TORCH_DATASETPATH', os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
-# traindir   = os.getenv('TORCH_TRAINPATH', os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
-traindir   = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
+traindir   = os.getenv('TORCH_TRAINPATH', os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
 
 ###################################################
 
 if __name__ == '__main__':
 
     networks = [
-        'lenet'
+        'lenet',
+        'alexnet',
+        'vgg11'
     ]
 
     device   = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -38,6 +39,10 @@ if __name__ == '__main__':
 
     if args.model=='lenet':
         model=models.LeNet()
+    elif args.model=='alexnet':
+        model=models.AlexNet()
+    elif args.model=='vgg11':
+        model=models.VGG11()
     else:
         raise ValueError('unsupported model')
 
