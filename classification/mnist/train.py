@@ -8,8 +8,13 @@ import torch.nn as nn
 
 from dataset import getMNIST
 import models
-import models.lenet
 import utils
+
+networks = [
+    'lenet',
+    'alexnet',
+    'vgg11'
+]
 
 ###################################################
 
@@ -49,10 +54,6 @@ def train(model, savefile, epochs, dataloader, save_all=False):
 
 if __name__ == '__main__':
 
-    networks = [
-        'lenet'
-    ]
-
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
     parser = argparse.ArgumentParser()
@@ -67,9 +68,15 @@ if __name__ == '__main__':
     print(f'-I({__file__}): Loading model...')
 
     if args.model=='lenet':
-        model=models.lenet.LeNet()
+        model=models.LeNet()
+    elif args.model=='alexnet':
+        model=models.AlexNet()
+    elif args.model=='vgg11':
+        model=models.VGG11()
     else:
         raise ValueError('unsupported model')
+
+    print(f'-I({__file__}): Loaded model: \n{model}')
 
     model.to(device)
     os.makedirs(traindir, exist_ok=True)

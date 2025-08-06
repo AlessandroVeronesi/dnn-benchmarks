@@ -6,7 +6,7 @@
 
 models=(\
     # "lenet"\
-    "alexnet"\
+    # "alexnet"\
     "vgg11"\
     # "vgg19"\
     # "res18"\
@@ -26,5 +26,5 @@ models=(\
 
 for model in "${models[@]}";
 do
-    python train.py --net $model --resume
+    python train.py --model $model --epochs 10 --batchsize 128
 done
