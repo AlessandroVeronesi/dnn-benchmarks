@@ -1,10 +1,8 @@
 
-import os
-
 from torchvision import transforms, datasets
 from torch.utils.data import DataLoader
 
-from utils import RandAugment
+from .utils import RandAugment
 
 #########################
 

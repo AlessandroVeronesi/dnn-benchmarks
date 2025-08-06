@@ -1,8 +1,8 @@
 
 from . import models
-from .dataset import getMNIST as getDataset
+from .dataset import getMNIST
 
 __all__ = [
     "models",
-    "getDataset"
+    "getMNIST"
 ]

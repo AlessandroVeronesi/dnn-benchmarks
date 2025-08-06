@@ -1,8 +1,8 @@
 
 from . import models
-from .dataset import getImageNET as getDataset
+from .dataset import getImageNet
 
 __all__ = [
     "models",
-    "getDataset"
+    "getImageNet"
 ]
