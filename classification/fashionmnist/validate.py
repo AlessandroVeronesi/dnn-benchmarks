@@ -11,9 +11,8 @@ from utils import test
 ###################################################
 
 datasetdir = os.getenv('TORCH_DATASETPATH', os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
-# traindir   = os.getenv('TORCH_TRAINPATH', os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
+traindir   = os.getenv('TORCH_TRAINPATH', os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
 # traindir   = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
-traindir   = os.path.dirname(os.path.realpath(__file__))
 
 ###################################################
 
