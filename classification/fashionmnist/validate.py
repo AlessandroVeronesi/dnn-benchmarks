@@ -12,7 +12,8 @@ from utils import test
 
 datasetdir = os.getenv('TORCH_DATASETPATH', os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
 # traindir   = os.getenv('TORCH_TRAINPATH', os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
-traindir   = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
+# traindir   = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
+traindir   = os.path.dirname(os.path.realpath(__file__))
 
 ###################################################
 
@@ -25,7 +26,8 @@ if __name__ == '__main__':
         'vit'
     ]
 
-    device   = 'cuda' if torch.cuda.is_available() else 'cpu'
+    # device   = 'cuda' if torch.cuda.is_available() else 'cpu'
+    device = 'cpu'
 
     parser = argparse.ArgumentParser()
 
@@ -46,7 +48,7 @@ if __name__ == '__main__':
     elif args.model=='vgg11':
         model=models.VGG11()
     elif args.model=='vit':
-        model=models.TinyViT()
+        model=models.TinyViT(num_classes=10, img_size=28, patch_size=4, in_chans=1, embed_dim=192, depth=4, num_heads=3, mlp_ratio=4.0)
     else:
         raise ValueError('unsupported model')
 

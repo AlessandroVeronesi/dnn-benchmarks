@@ -8,6 +8,12 @@ def getFashionMNIST(datadir, img_size, batchsize=64, device='cpu'):
 
     transf = transforms.Compose([transforms.Resize(img_size), transforms.ToTensor()])
 
+    transf = transforms.Compose([
+        transforms.Resize(img_size),
+        transforms.ToTensor(),
+        transforms.Normalize((0.2860), (0.3530)),
+    ])
+
     # download and create datasets
     print(f'-I({__file__}): Loading Fashion MNIST dataset...')
 
