@@ -13,5 +13,5 @@ models=(\
 
 for model in "${models[@]}";
 do
-    python train.py --model $model --epochs 50 --batchsize 64
+    python train.py --model $model --epochs 1 --batchsize 64
 done
