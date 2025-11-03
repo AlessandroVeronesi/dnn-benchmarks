@@ -6,11 +6,12 @@
 
 models=(\
     # "lenet"\
-    "alexnet"\
-    "vgg11"\
+    # "alexnet"\
+    # "vgg11"\
     # "vgg19"\
-    "res18"\
-    "res34"\
+    "res9"\
+    # "res18"\
+    # "res34"\
     # "res50"\
     # "res101"\
     # "convmixer"\

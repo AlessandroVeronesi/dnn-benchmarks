@@ -16,7 +16,6 @@ import argparse
 import time
 
 import models
-import models.simplevit
 from utils import progress_bar
 from dataset import getCIFAR10
 
@@ -136,6 +135,7 @@ if __name__ == '__main__':
         'alexnet',
         'vgg11',
         'vgg19',
+        'res9',
         'res18',
         'res34',
         'res50',
@@ -200,6 +200,9 @@ if __name__ == '__main__':
         net = models.VGG11CIFAR10(dropout_value=.1)
     elif args.net=='vgg19':
         net = models.VGG('VGG19')
+    elif args.net=='res9':
+        from models.resnet9 import ResNet9
+        net = ResNet9(3, 10)
     elif args.net=='res18':
         net = models.ResNet18()
     elif args.net=='res34':
