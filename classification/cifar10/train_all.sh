@@ -5,27 +5,27 @@
 # ------------------
 
 models=(\
-    # "lenet"\
-    # "alexnet"\
-    # "vgg11"\
-    # "vgg19"\
+    "lenet"\
+    "alexnet"\
+    "vgg11"\
+    "vgg19"\
     "res9"\
-    # "res18"\
-    # "res34"\
-    # "res50"\
-    # "res101"\
-    # "convmixer"\
-    # "mlpmixer"\
-    # "vit_small"\
-    # "vit_tiny"\
-    # "simplevit"\
-    # "vit"\
-    # "cait"\
-    # "cait_small"\
-    # "swin"\
+    "res18"\
+    "res34"\
+    "res50"\
+    "res101"\
+    "convmixer"\
+    "mlpmixer"\
+    "vit_small"\
+    "vit_tiny"\
+    "simplevit"\
+    "vit"\
+    "cait"\
+    "cait_small"\
+    "swin"\
     )
 
 for model in "${models[@]}";
 do
-    python train.py --net $model --resume
+    python train.py --net $model --resume --epochs 100
 done

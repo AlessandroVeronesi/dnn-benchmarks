@@ -6,7 +6,7 @@ import torch
 from torch import optim
 import torch.nn as nn
 
-from dataset import getMNIST
+from dataset import getFashionMNIST
 import models
 import utils
 
@@ -75,7 +75,7 @@ if __name__ == '__main__':
     elif args.model=='vgg11':
         model=models.VGG11()
     elif args.model=='vit':
-        model=models.ViT()
+        model=models.TinyViT()
     else:
         raise ValueError('unsupported model')
 
@@ -83,11 +83,11 @@ if __name__ == '__main__':
 
     model.to(device)
     os.makedirs(traindir, exist_ok=True)
-    savefile = os.path.join(traindir, f'fp32_{args.model}_mnist.pth')
+    savefile = os.path.join(traindir, f'fp32_{args.model}_fashion-mnist.pth')
     print(f'-I({__file__}): Model loaded')
 
     ## Dataset
     img_size = (28, 28)
-    trainloader, _ = getMNIST(datasetdir, img_size, args.batchsize, device)
+    trainloader, _ = getFashionMNIST(datasetdir, img_size, args.batchsize, device)
 
     train(model, savefile, args.epochs, trainloader)

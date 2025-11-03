@@ -23,8 +23,7 @@ from dataset import getCIFAR10
 ## System
 
 datasetdir = os.getenv('TORCH_DATASETPATH', os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
-# savedir    = os.getenv('TORCH_TRAINPATH', os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
-savedir    = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
+savedir    = os.getenv('TORCH_TRAINPATH', os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
 
 #####################################################################################################################
 ## Train Routine
@@ -95,10 +94,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     batchsize = int(args.batchsize)
-    imsize = int(args.size)
-
-    use_amp = not args.noamp
-    aug = args.noaug
+    aug = False
 
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     best_acc = 0  # best test accuracy
@@ -109,7 +105,7 @@ if __name__ == '__main__':
     if args.net=='vit_timm':
         size = 384
     else:
-        size = imsize
+        size = 32
 
 
     # Model factory..
