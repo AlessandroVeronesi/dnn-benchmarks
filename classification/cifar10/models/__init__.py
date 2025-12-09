@@ -19,7 +19,7 @@ __all__ = [
     "ConvMixer",
     "LeNet",
     "MLPMixer",
-    "ResNet",
+    "ResNet9",
     "ResNet18",
     "ResNet34",
     "ResNet50",
